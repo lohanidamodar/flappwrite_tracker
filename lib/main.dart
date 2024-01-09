@@ -1,11 +1,11 @@
-import 'package:flappwrite_tracker/appwrite/appwrite.dart';
 import 'package:flappwrite_tracker/dependencies.dart';
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 
 void main() {
   initDependencies();
-  runApp(const MainApp());
+  runApp(const ProviderScope(child: MainApp()));
 }
 
 class MainApp extends StatelessWidget {
