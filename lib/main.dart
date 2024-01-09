@@ -1,7 +1,7 @@
 import 'package:flappwrite_tracker/dependencies.dart';
+import 'package:flappwrite_tracker/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 
 void main() {
   initDependencies();
@@ -13,12 +13,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+    return Consumer(builder: (context, ref, child) {
+      final router = ref.watch(routerProvider);
+      return MaterialApp.router(
+        routerConfig: router,
+      );
+    });
   }
 }
