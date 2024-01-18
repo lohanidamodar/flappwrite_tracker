@@ -20,7 +20,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
     try {
       final user = await authProvider.getAccount();
       state = state.copyWith(
-          user: User.fromMap( user!.toMap()), error: null, status: AuthStatus.authenticated);
+          user: User.fromMap( user.toMap()), error: null, status: AuthStatus.authenticated);
     } on AppwriteException catch (e) {
       state = state.copyWith(
           error: e.message, user: null, status: AuthStatus.unauthenticated);
