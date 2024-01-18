@@ -1,3 +1,4 @@
+import 'package:flappwrite_tracker/features/login_screen/login_screen.dart';
 import 'package:flappwrite_tracker/features/signup_screen/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -16,7 +17,9 @@ class HomePage extends StatelessWidget {
           const Text('Welcome to FlAppwrite Tracker'),
           const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              context.goNamed(LoginScreen.name);
+            },
             child: const Text('Login'),
           ),
           ElevatedButton(
