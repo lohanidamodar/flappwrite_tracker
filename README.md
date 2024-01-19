@@ -7,4 +7,6 @@ This is a Flutter project for the Flutter Appwrite course.
 
 ## Introduction
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cmboLwHvsFU?si=eajMYULFdPdQ7HwA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![Introduction video](https://img.youtube.com/vi/cmboLwHvsFU/maxresdefault.jpg)](https://www.youtube.com/watch?v=cmboLwHvsFU)
+
+
