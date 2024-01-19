@@ -13,6 +13,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(title: const Text('Home')),
       body: Center(
           child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           const Text('Welcome to FlAppwrite Tracker'),
           const SizedBox(height: 20),
@@ -22,6 +23,7 @@ class HomePage extends StatelessWidget {
             },
             child: const Text('Login'),
           ),
+          const SizedBox(height: 10.0),
           ElevatedButton(
             onPressed: () {
               context.goNamed(SignupScreen.name);

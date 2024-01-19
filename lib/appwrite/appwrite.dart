@@ -11,7 +11,17 @@ class Appwrite {
     account = Account(client);
   }
 
-  Future<User?> createAccount(
+  Future<User> getAccount() async {
+    try {
+      final user = await account.get();
+      return user;
+    } on AppwriteException catch (e) {
+      debugPrint(e.message);
+      rethrow;
+    }
+  }
+
+  Future<User> createAccount(
       String name, String email, String password) async {
     try {
       final user = await account.create(
@@ -19,18 +29,28 @@ class Appwrite {
       return user;
     } on AppwriteException catch (e) {
       debugPrint(e.message);
-      return null;
+      rethrow;
     }
   }
 
-  Future<Session?> createEmailSession(String email, String password) async {
+  Future<Session> createEmailSession(String email, String password) async {
     try {
       final session =
           await account.createEmailSession(email: email, password: password);
       return session;
     } on AppwriteException catch (e) {
       debugPrint(e.message);
-      return null;
+      rethrow;
+    }
+  }
+
+  Future<bool> logout() async {
+    try {
+      await account.deleteSession(sessionId: 'current');
+      return true;
+    } on AppwriteException catch (e) {
+      debugPrint(e.message);
+      rethrow;
     }
   }
 }
