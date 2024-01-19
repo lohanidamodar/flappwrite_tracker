@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class Dashboard extends StatelessWidget {
+  static const String name = 'dashboard';
   const Dashboard({Key? key}) : super(key: key);
 
   @override
